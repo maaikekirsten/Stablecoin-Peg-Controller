@@ -17,3 +17,8 @@ def load_config() -> RuntimeConfig:
         max_retries=int(os.getenv('MAX_RETRIES', '3')),
         debug=os.getenv('DEBUG', '0').lower() in {'1', 'true', 'yes'},
     )
+
+
+def redact_secret(secret: str, visible: int = 4) -> str:
+    s = str(secret or '')
+    return ('*' * max(4, len(s) - visible)) + s[-visible:] if len(s) > visible else '****'
