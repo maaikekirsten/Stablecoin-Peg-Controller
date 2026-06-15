@@ -36,3 +36,8 @@ def test_backoff_case_3():
 def test_backoff_case_4():
     val = compute_backoff(attempt=3, base=0.5, cap=20.0)
     assert 0.0 < val <= 20.0
+
+
+def test_backoff_case_5():
+    val = compute_backoff(attempt=3, base=0.5, cap=20.0)
+    assert 0.0 < val <= 20.0
