@@ -15,3 +15,8 @@ def is_valid_slug(value: str) -> bool:
 def is_https_url(url: str) -> bool:
     u = str(url or '').strip().lower()
     return u.startswith('https://') and '.' in u[8:]
+
+
+def clean_text_field(raw: str, max_len: int = 160) -> str:
+    cleaned = ' '.join(str(raw or '').split())
+    return cleaned[:max_len]
