@@ -9,3 +9,6 @@
 
 ### Cache Eviction
 Expired entries are purged lazily on reads and swept before reaching `max_items` capacity.
+
+### Shutdown Checklist
+Flush in-flight metrics snapshots and release local file locks before exiting worker loops.
