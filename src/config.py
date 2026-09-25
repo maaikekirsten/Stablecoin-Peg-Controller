@@ -34,3 +34,7 @@ def parse_positive_int(raw, fallback: int = 1) -> int:
 
 def parse_csv_env(raw: str) -> list:
     return [item.strip() for item in str(raw or '').split(',') if item.strip()]
+
+
+def clamp_port(port: int, default: int = 8080) -> int:
+    return port if isinstance(port, int) and 1 <= port <= 65535 else default
