@@ -10,3 +10,7 @@ def format_event(level: str, message: str, **fields) -> str:
 def fmt_duration(seconds: float) -> str:
     s = max(0.0, float(seconds))
     return f'{int(s * 1000)}ms' if s < 1.0 else f'{s:.2f}s'
+
+
+def make_trace_tag(prefix: str, seq: int) -> str:
+    return f'{prefix.strip().lower()}-{seq:04d}'
