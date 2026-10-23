@@ -14,3 +14,10 @@ def is_retryable_status(status_code: int) -> bool:
 
 def is_fatal_client_error(status_code: int) -> bool:
     return 400 <= status_code < 500 and status_code not in {408, 425, 429}
+
+
+def parse_retry_after(header_val, fallback: float = 1.0) -> float:
+    try:
+        return max(0.0, float(str(header_val).strip()))
+    except (TypeError, ValueError):
+        return fallback
