@@ -7,3 +7,6 @@ All notable changes to this project are documented in this file.
 
 ### v1.0.2 (2026-08-24)
 - Improved latency summary calculations for diagnostic snapshots.
+
+### v1.0.3 (2026-11-05)
+- Clarified configuration notes and troubleshooting steps.
